@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Link Shortener</title>
+  <style>
+    .container {
+      margin: 50px auto;
+      width: 400px;
+      text-align: center;
+      color: rgb(4, 0, 243);
+    }
+
+    .shorten-form {
+      display: flex;
+      justify-content: center;
+    }
+
+    .shorten-form input[type="text"] {
+      padding: 5px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    .shorten-form input[type="submit"] {
+      padding: 5px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .shortened-link {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Link Shortener</h1>
+    <form class="shorten-form">
+      <input type="text" id="url-input" placeholder="Enter URL" required>
+      <input type="submit" value="Shorten">
+    </form>
+    <div class="shortened-link">
+      <p id="short-url"></p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.querySelector('.shorten-form');
+    const urlInput = document.getElementById('url-input');
+    const shortUrlText = document.getElementById('short-url');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const url = urlInput.value;
+      const shortUrl = shortenUrl(url);
+      shortUrlText.textContent = shortUrl;
+      urlInput.value = '';
+    });
+
+    function shortenUrl(url) {
+      return 'https://example.com/abcd';
+    }
+  </script>
+</body>
+</html>

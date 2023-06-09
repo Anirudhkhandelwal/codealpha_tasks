@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Editor</title>
+  <style>
+    #code {
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+  <script>
+    function runCode() {
+      var code = document.getElementById('code').value;
+      var output = document.getElementById('output');
+      try {
+        output.textContent = eval(code);
+      } catch (error) {
+        output.textContent = "Error: " + error.message;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Code Editor</h1>
+
+  <h2>Code:</h2>
+  <textarea id="code"></textarea>
+
+  <button onclick="runCode()">Run</button>
+
+  <h2>Output:</h2>
+  <pre id="output"></pre>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Editor</title>
+  <style>
+    #code {
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+  <script>
+    function runCode() {
+      var code = document.getElementById('code').value;
+      var output = document.getElementById('output');
+      try {
+        output.textContent = eval(code);
+      } catch (error) {
+        output.textContent = "Error: " + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
